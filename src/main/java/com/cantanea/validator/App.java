@@ -2,13 +2,16 @@ package com.cantanea.validator;
 
 import io.javalin.Javalin;
 import io.javalin.http.UploadedFile;
+import io.javalin.plugin.bundled.CorsPluginConfig;
 
 public class App {
 	public static void main(String[] args) {
 		int port = Integer.parseInt(System.getenv().getOrDefault("PORT", "8080"));
 
-		Javalin app = Javalin.create(config -> {
-			config.plugins.enableCors(cors -> cors.add(it -> it.anyHost()));
+		var app = Javalin.create(config -> {
+			config.bundledPlugins.enableCors(cors -> {
+				cors.addRule(CorsPluginConfig.CorsRule::anyHost);
+			});
 		}).start(port);
 
 		app.post("/validate", ctx -> {

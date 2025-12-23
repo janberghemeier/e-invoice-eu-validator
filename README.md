@@ -73,14 +73,14 @@ The service has one single endpoint `/validate`. It takes one single URL
 parameter `invoice` that contains the invoice file.
 
 ```shell
-curl -v -X POST -Finvoice=@invoice.xml http://localhost:7070/validate
+curl -v -X POST -Finvoice=@invoice.xml http://localhost:8080/validate
 ```
 
 This would validate the invoice in the file `invoice.xml`. The hybrid
 formats Factur-X resp. ZUGFeRD can also be validated:
 
 ```shell
-curl -v -X POST -Finvoice=@invoice.pdf http://localhost:7070/validate
+curl -v -X POST -Finvoice=@invoice.pdf http://localhost:8080/validate
 ```
 
 If the document is valid, you will receive a response with a status code of 200.

@@ -55,7 +55,7 @@ Download a `validator-VERSION-jar-with-dependencies.jar` file from the
 Then run the server
 
 ```shell
-PORT=8080 java -jar target/validator-2.16.4-jar-with-dependencies.jar
+PORT=8080 java -jar target/validator-2.21.0-jar-with-dependencies.jar
 ```
 
 Inspect the sources if you want to run a jar file without dependencies.

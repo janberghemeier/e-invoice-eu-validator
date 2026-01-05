@@ -18,6 +18,13 @@ public class Validator {
 		return xml;
 	}
 
+	public String validate(String file) {
+
+		String xml = this.zfv.validate(file.getBytes(), "xml");
+
+		return xml;
+	}
+
 	public boolean wasValid() {
 		return this.zfv.wasCompletelyValid();
 	}
